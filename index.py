@@ -18,7 +18,7 @@ def download_file():
         # 获取 textarea_data 的内容
         textContent = request.form.get('textarea_data')
         # 指定要下載的資料夾路徑和檔案名稱
-        directory = 'assets'
+        directory = 'tpm'
         filename = 'example.txt'
 
         # 将输入的内容写入文件
@@ -28,7 +28,7 @@ def download_file():
                 cleaned_lines = [line.rstrip() for line in lines]  # 将内容切割成每行的列表
                 file.write('\n'.join(cleaned_lines))  # 写入时重新组合成换行符号分隔的字符串
 
-        with open("assets/example.txt", "r") as f:
+        with open("tpm/example.txt", "r") as f:
             sequences = [line.strip() for line in f]
             print(sequences)
 

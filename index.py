@@ -54,10 +54,10 @@ def download_file():
             logo.style_xticks(rotation=90, fmt="%s")
             logo.ax.set_title("My Sequence Logo")
             logo.fig.set_size_inches(6, 4)
-            logo_path = "/tmp/my_logo.png"
+            logo_path = "assets/my_logo.png"
             logo.fig.savefig(logo_path, dpi=300)
 
-       return redirect('/')
+        return redirect('/')
 
     return jsonify({"error": "Invalid request method"})
 

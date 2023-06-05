@@ -57,7 +57,7 @@ def download_file():
             logo_path = "/tmp/my_logo.png"
             logo.fig.savefig(logo_path, dpi=300)
 
-       return send_file("/tmp/my_logo.png", mimetype="image/png")
+       return redirect('/')
 
     return jsonify({"error": "Invalid request method"})
 

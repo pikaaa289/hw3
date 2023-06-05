@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sequence	Logo	Visualization</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/logo.png" alt="Global">
+            <p>Sequence	Logo	Visualization</p>
+          </a>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>Example</span></li>
+            <li><span>Setting</span></li>
+            <li><span>Result</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1><br>Create your<br>Sequence<br>Logo</h1>
+                <img src="assets/img/introduction-visual.png" alt="Welcome">
+                <button class="cta">View previous Results
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work" >
+              <h2>- Here is an example -</h2>
+              <div>
+                <div style="margin-left: 10rem;display: inline-block; float: left;">
+                <h3>Input Sequences :</h3>
+                <p style="margin-left: 2rem;">
+                    GDLGAGKTT<br>
+                    GDLGAGKTT<br>
+                    GPLGAGKTS<br>
+                    GDLGAGKTS<br>
+                    GDLGAGKTT<br>
+                    GDLGAGKTT<br>
+                    GEVGSGKTT<br>
+                    GELGAGKTT<br>
+                    GDLGAGKTT<br>
+                    GNLGAGKTT<br>
+                    GELGAGKTT<br>
+                    GTLGAGKTT<br>
+                    GDLGAGKTT<br>
+                    GDLGAGKTT<br>
+                    GDLGAGKTT<br>
+                    GDLGAGKTT<br>
+                    GDLGAGKTT
+                  </p>
+                </div>
+                <div style="display: inline-block; float: right;">
+                  <h3 style="margin-left: 12rem;">Output Image :</h3><br>
+                  <img src="assets/img/example.png" alt="Your Image" width="540" height="360" />
+                </div>
+              </div>
+              
+            </div>
+          </li>
+
+          <li class="l-section section">
+            <div class="hire">
+              <h2>- Input your Sequence -</h2>
+              <!-- checkout formspree.io for easy form setup -->
+              <form class="work-request" action="/download_file" method="POST">
+                <textarea id="sequence" name="textarea_data" spellcheck="false" style="width: 50%;height: 30rem;color:black;font-size: 20px;padding-left: 1rem;"></textarea>                
+                <br>
+                <input type="submit" value="Submit" id="submit">
+              </form>
+              <br>
+              <h2>*送出後要去result頁面查看結果*</h2>
+            </div> 
+          </li>
+
+          <li class="l-section section">
+            <div class="work">
+              <h2>- Here is your Logo -</h2>
+              <div style="margin-left: 13rem;" id="result-image-container">
+                <img src="assets/my_logo.png" alt="Your Image" width="540" height="360" />
+              </div>
+              
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Example</li>
+    <li>Setting</li>
+    <li>Result</li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+<script>
+  document.getElementById("submit").addEventListener("click", function () {
+    var textContent = document.getElementById("sequence").value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/download_file', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('textarea_data=' + encodeURIComponent(textContent));
+    });
+</script>
+</body>
+</html>
